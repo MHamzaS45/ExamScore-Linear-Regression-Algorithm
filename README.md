@@ -1,6 +1,6 @@
-# Linar Regression Algorithm
+# Linar Regression Algorithm Test
 
-Made a LR algorithm for predicting Exam Score via other performance factors with:
+Testing a LR algorithm for predicting Exam Score via other performance factors with:
 - pandas
 - numpy
 - scikit-learn
