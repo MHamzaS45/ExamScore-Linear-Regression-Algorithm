@@ -18,10 +18,15 @@ raw_data.info()                                                           # This
 sns.pairplot(raw_data[['Hours_Studied', 'Sleep_Hours', 'Exam_Score']])    # This will show the relationship between the selectedvariables in the dataset.
 
 index = raw_data.columns
+
+# Clean data/Preprocessing Layer
+raw_data = raw_data.dropna()
+raw_data = pd.get_dummies(raw_data, drop_first=True)
+
+
+# Split between feature and target variable
 X = raw_data.drop('Exam_Score', axis=1)
 y = raw_data['Exam_Score']
-
-X = pd.get_dummies(X)
 
 
 
@@ -58,3 +63,9 @@ plt.show()
 plt.hist(y_test - predictions)
 plt.title("Residual Distribution")
 plt.show()
+
+
+# Evaluation:print mean absolute error, mean squared error, and root mean squared error
+print("Mean Absolute Error:", metrics.mean_absolute_error(y_test, predictions))
+print("Mean Squared Error:", metrics.mean_squared_error(y_test, predictions))
+print("Root Mean Squared Error:", np.sqrt(metrics.mean_squared_error(y_test, predictions)))
