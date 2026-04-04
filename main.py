@@ -5,17 +5,17 @@
 
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt  # Used to embed the visualizations within Jupyter notebook
-import seaborn as sns # Make the datasets look stunning. Like a boss.
+import matplotlib.pyplot as plt                                          # Used to embed the visualizations within Jupyter notebook
+import seaborn as sns                                                    # Make the datasets look stunning. Like a boss.
 from sklearn.model_selection import train_test_split
 from sklearn import metrics
-from sklearn.linear_model import LinearRegression # This is the model we are using to predict the exam score. 
+from sklearn.linear_model import LinearRegression                        # This is the model we are using to predict the exam score. 
 
 
-raw_data = pd.read_csv('StudentPerformanceFactors2.csv')
+raw_data = pd.read_csv('StudentPerformanceFactors2.csv')                  
 
-raw_data.info() # This will show the information about the dataset.
-sns.pairplot(raw_data[['Hours_Studied', 'Sleep_Hours', 'Exam_Score']]) # This will show the relationship between the selectedvariables in the dataset.
+raw_data.info()                                                           # This will show the information about the dataset.
+sns.pairplot(raw_data[['Hours_Studied', 'Sleep_Hours', 'Exam_Score']])    # This will show the relationship between the selectedvariables in the dataset.
 
 index = raw_data.columns
 X = raw_data.drop('Exam_Score', axis=1)
